@@ -329,6 +329,7 @@ int dromajo_cosim_step(dromajo_cosim_state_t *state,
                              emu_priv, emu_pc, emu_insn, emu_wdata, dut_wdata);
 
     if (verbose) {
+        fprintf(dromajo_stderr, "CORE%d: ", hartid);
         fprintf(dromajo_stderr, "%d 0x%016" PRIx64 " ", emu_priv, emu_pc);
         fprintf(dromajo_stderr, "(0x%08x) ", emu_insn);
     }

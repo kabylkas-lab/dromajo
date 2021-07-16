@@ -129,6 +129,18 @@ static void mmio_write(void *opaque, uint32_t offset, uint32_t val, int size_log
     fprintf(dromajo_stderr, "mmio_write: offset=%x size_log2=%d val=%x\n", offset, size_log2, val);
 }
 
+static uint32_t bootrom_device_read(void *opaque, uint32_t offset, int size_log2)
+{
+    fprintf(dromajo_stderr, "bootrom_device_read: offset=%x size_log2=%d\n", offset, size_log2);
+
+    return 0x80000000;
+}
+
+static void bootrom_device_write(void *opaque, uint32_t offset, uint32_t val, int size_log2)
+{
+    fprintf(dromajo_stderr, "bootrom_device_write: offset=%x size_log2=%d val=%x\n", offset, size_log2, val);
+}
+
 static uint32_t uart_read(void *opaque, uint32_t offset, int size_log2)
 {
     SiFiveUARTState *s = (SiFiveUARTState *)opaque;
@@ -1120,6 +1132,11 @@ RISCVMachine *virt_machine_init(const VirtMachineParams *p)
     for (int i = 0; i < s->ncpus; ++i) {
         s->cpu_state[i]->physical_addr_len = p->physical_addr_len;
     }
+
+
+    cpu_register_device(s->mem_map, 0x4000, 8, 0,
+                        bootrom_device_read, bootrom_device_write,
+                        DEVIO_SIZE32 | DEVIO_SIZE16 | DEVIO_SIZE8);
 
     if (p->mmio_start) {
         uint64_t sz = p->mmio_end - p->mmio_start;
