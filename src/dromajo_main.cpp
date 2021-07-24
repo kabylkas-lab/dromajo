@@ -592,7 +592,7 @@ static void usage(const char *prog, const char *msg)
 {
     fprintf(dromajo_stderr,
             "error: %s\n"
-            CONFIG_VERSION ", Copyright (c) 2016-2017 Fabrice Bellard,"
+            "%s, Copyright (c) 2016-2017 Fabrice Bellard,"
             " Copyright (c) 2018,2019 Esperanto Technologies\n"
             "usage: %s {options} [config|elf-file]\n"
             "       --cmdline Kernel command line arguments to append\n"
@@ -616,6 +616,7 @@ static void usage(const char *prog, const char *msg)
             "       --custom_extension add X extension to misa for all cores\n"
             "       --clear_ids clear mvendorid, marchid, mimpid for all cores\n",
             msg,
+            VM_CONFIG_VERSION, 
             prog,
             (long)BOOT_BASE_ADDR, (long)RAM_BASE_ADDR,
             (long)PLIC_BASE_ADDR, (long)PLIC_SIZE,

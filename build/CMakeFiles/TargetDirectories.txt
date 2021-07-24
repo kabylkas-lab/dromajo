@@ -1,0 +1,6 @@
+/soe/nkabylka/multicore-cosim/chipyard/tools/dromajo/dromajo-src/build/CMakeFiles/rebuild_cache.dir
+/soe/nkabylka/multicore-cosim/chipyard/tools/dromajo/dromajo-src/build/CMakeFiles/edit_cache.dir
+/soe/nkabylka/multicore-cosim/chipyard/tools/dromajo/dromajo-src/build/CMakeFiles/dromajo_cosim_test.dir
+/soe/nkabylka/multicore-cosim/chipyard/tools/dromajo/dromajo-src/build/CMakeFiles/dromajo.dir
+/soe/nkabylka/multicore-cosim/chipyard/tools/dromajo/dromajo-src/build/CMakeFiles/dromajo_cosim.dir
+/soe/nkabylka/multicore-cosim/chipyard/tools/dromajo/dromajo-src/build/CMakeFiles/gold.dir

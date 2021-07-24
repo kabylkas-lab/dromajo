@@ -25,6 +25,19 @@
 #include <stdio.h>
 #include <assert.h>
 
+#define BOOM_GOLDMEM
+
+#ifdef BOOM_GOLDMEM
+void boom_goldmem_init(uint32_t ncores); 
+void boom_goldmem_insert_load(int hartid, uint64_t address);
+
+void dromajo_goldmem_insert_load(dromajo_cosim_state_t *state, int hartid, uint64_t rob_id)
+{
+    boom_goldmem_insert_load(hartid, rob_id);
+}
+
+#endif
+
 /*
  * dromajo_cosim_init --
  *
@@ -39,7 +52,9 @@ dromajo_cosim_state_t *dromajo_cosim_init(int argc, char *argv[])
     //m->llc = new LiveCache("LLC", 1024*1024*32); // 32MB LLC (should be ~2x larger than real)
     m->llc = new LiveCache("LLC", 1024*32); // Small 32KB for testing
 #endif
-
+#ifdef BOOM_GOLDMEM
+    boom_goldmem_init(m->ncpus);
+#endif
     m->common.cosim = true;
     m->common.pending_interrupt = -1;
     m->common.pending_exception = -1;

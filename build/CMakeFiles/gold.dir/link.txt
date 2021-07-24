@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgold.a CMakeFiles/gold.dir/gold/Gold_core.cpp.o CMakeFiles/gold.dir/gold/Gold_data.cpp.o CMakeFiles/gold.dir/gold/Gold_notify.cpp.o CMakeFiles/gold.dir/gold/lrand.cpp.o CMakeFiles/gold.dir/gold/bridge_inorder.cpp.o CMakeFiles/gold.dir/gold/bridge_boom.cpp.o CMakeFiles/gold.dir/external/fmt/format.cc.o CMakeFiles/gold.dir/external/fmt/os.cc.o
+/usr/bin/ranlib libgold.a

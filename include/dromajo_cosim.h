@@ -86,6 +86,8 @@ int dromajo_cosim_override_mem(dromajo_cosim_state_t *state,
                                uint64_t dut_val,
                                int size_log2);
 
+void dromajo_goldmem_insert_load(dromajo_cosim_state_t *state, int hartid, uint64_t rob_id);
+
 #ifdef __cplusplus
 } // extern C
 #endif
